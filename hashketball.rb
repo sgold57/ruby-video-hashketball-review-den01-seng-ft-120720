@@ -134,7 +134,7 @@ end
 def find_hooper(name)
   game_hash.each do |squad, specs|
     specs[:players].each do |hooper, stats|
-      if hooper == name
+      if hooper[:player_name] == name
         return hooper
       end
     end
