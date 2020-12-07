@@ -127,4 +127,8 @@ def game_hash
   }
 end
 
+def find_hooper(name)
+  
+end
+
 # Write code here
