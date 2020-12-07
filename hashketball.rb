@@ -127,9 +127,20 @@ def game_hash
   }
 end
 
-def find_hooper(name)
-  game_hash.each do |squad, specs|
-    
-end
+
 
 # Write code here
+
+def find_hooper(name)
+  game_hash.each do |squad, specs|
+    specs[:players].each do |hooper, stats|
+      if hooper == name
+        return hooper
+      end
+    end
+  end
+end
+
+def num_points_scored(player)
+  find_hooper(player)[:points]
+end
