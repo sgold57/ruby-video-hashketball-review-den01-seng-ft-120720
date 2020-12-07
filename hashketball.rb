@@ -128,7 +128,8 @@ def game_hash
 end
 
 def find_hooper(name)
-  
+  game_hash.each do |squad, specs|
+    
 end
 
 # Write code here
