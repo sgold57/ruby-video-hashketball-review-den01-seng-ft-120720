@@ -148,3 +148,11 @@ end
 def shoe_size(player)
   find_hooper(player)[:shoe]
 end
+
+def team_colors(team)
+  game_hash.each do |squad, specs|
+    if squad[:team_name] == team
+      return squad[:colors]
+    end
+  end
+end
