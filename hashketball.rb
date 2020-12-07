@@ -1,4 +1,5 @@
 # Write your code below game_hash
+require 'pry'
 
 def game_hash
   {
@@ -127,4 +128,70 @@ def game_hash
   }
 end
 
+
+
 # Write code here
+
+def find_hooper(name)
+  game_hash.each do |squad, specs|
+    specs[:players].each do |hooper, stats|
+      if hooper[:player_name] == name
+        return hooper
+      end
+    end
+  end
+end
+
+def num_points_scored(player)
+  find_hooper(player)[:points]
+end
+
+def shoe_size(player)
+  find_hooper(player)[:shoe]
+end
+
+def team_colors(team)
+  game_hash.each do |squad, specs|
+    if specs[:team_name] == team
+      return specs[:colors]
+    end
+  end
+end
+
+def team_names
+  names_array = []
+  game_hash.each do |squad, specs|
+    names_array.push(specs[:team_name])
+  end
+  names_array
+end
+
+def player_numbers(team)
+  numbers_array = []
+  game_hash.each do |squad, specs|
+    if specs[:team_name] == team
+      specs[:players].each do |hooper, stats|
+        numbers_array.push(hooper[:number])
+      end
+    end
+  end
+  numbers_array
+end
+
+def player_stats(name)
+  find_hooper(name)
+end
+
+def big_shoe_rebounds
+  bigfoot = ""
+  largest_shoe = 0
+  game_hash.each do |squad, specs|
+    specs[:players].each do |hooper, stats|
+      if hooper[:shoe] > largest_shoe
+        largest_shoe = hooper[:shoe]
+        bigfoot = hooper[:player_name]
+      end
+    end
+  end
+  find_hooper(bigfoot)[:rebounds]
+end
