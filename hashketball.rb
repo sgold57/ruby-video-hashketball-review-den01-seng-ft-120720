@@ -147,3 +147,4 @@ end
 
 def shoe_size(player)
   find_hooper(player)[:shoe_size]
+end
