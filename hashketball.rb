@@ -181,3 +181,17 @@ end
 def player_stats(name)
   find_hooper(name)
 end
+
+def big_shoe_rebounds
+  bigfoot = ""
+  largest_shoe = 0
+  game_hash.each do |squad, specs|
+    specs[:players].each do |hooper, stats|
+      if hooper[:shoe] > largest_shoe
+        largest_shoe = hooper[:shoe]
+        bigfoot = hooper[:player_name]
+      end
+    end
+  end
+  find_hooper(bigfoot)[:rebounds]
+end
