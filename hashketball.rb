@@ -173,6 +173,7 @@ def player_numbers(team)
     if specs[:team_name] == team
       binding.pry
       specs[:players].each do |hooper, stats|
+        binding.pry
         numbers_array.push(stats[:number])
       end
     end
