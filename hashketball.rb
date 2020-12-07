@@ -177,3 +177,7 @@ def player_numbers(team)
   end
   numbers_array
 end
+
+def player_stats(name)
+  find_hooper(name)
+end
