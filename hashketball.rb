@@ -169,11 +169,8 @@ end
 def player_numbers(team)
   numbers_array = []
   game_hash.each do |squad, specs|
-    binding.pry
     if specs[:team_name] == team
-      binding.pry
       specs[:players].each do |hooper, stats|
-        binding.pry
         numbers_array.push(hooper[:number])
       end
     end
