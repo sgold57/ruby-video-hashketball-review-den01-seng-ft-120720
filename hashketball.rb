@@ -146,5 +146,5 @@ def num_points_scored(player)
 end
 
 def shoe_size(player)
-  find_hooper(player)[:shoe_size]
+  find_hooper(player)[:shoe]
 end
