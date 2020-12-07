@@ -165,3 +165,15 @@ def team_names
   end
   names_array
 end
+
+def player_numbers(team)
+  numbers_array = []
+  game_hash.each do |squad, specs|
+    if specs[:team_name] == team
+      specs[:players].each do |hooper, stats|
+        numbers_array.push(stats[:number])
+      end
+    end
+  end
+  numbers_array
+end
