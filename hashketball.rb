@@ -1,4 +1,5 @@
 # Write your code below game_hash
+require 'pry'
 
 def game_hash
   {
@@ -151,8 +152,10 @@ end
 
 def team_colors(team)
   game_hash.each do |squad, specs|
+    binding.pry
     if squad[:team_name] == team
-      return specs[:colors]
+      binding.pry
+      return squad[:colors]
     end
   end
 end
