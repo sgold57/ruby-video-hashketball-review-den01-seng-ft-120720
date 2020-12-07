@@ -153,9 +153,9 @@ end
 def team_colors(team)
   game_hash.each do |squad, specs|
     binding.pry
-    if specs[:team_name].to_s == team
+    if specs[:team_name] == team
       binding.pry
-      return squad[:colors]
+      return specs[:colors]
     end
   end
 end
