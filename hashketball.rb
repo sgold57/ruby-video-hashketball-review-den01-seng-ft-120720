@@ -174,7 +174,7 @@ def player_numbers(team)
       binding.pry
       specs[:players].each do |hooper, stats|
         binding.pry
-        numbers_array.push(stats[:number])
+        numbers_array.push(hooper[:number])
       end
     end
   end
